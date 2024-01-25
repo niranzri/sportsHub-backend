@@ -38,7 +38,7 @@ router.post("/", async (req, res) => {
 });
 
 // PUT - Updates one company - /api/companies/:companyId 
-router.delete("/:companyId", async (req, res) => {
+router.put("/:companyId", async (req, res) => {
     try {
       const { companyId } = req.params;
       const updatedCompany = await Company.findByIdAndUpdate(companyId, req.body, {
