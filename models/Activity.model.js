@@ -5,7 +5,7 @@ const activitySchema = new Schema({
 
   schedule: { type: [String] },
 
-  company: { type: Types.ObjectId, required: true, ref: "companyId" },
+  company: { type: Types.ObjectId, required: true, ref: "company" },
 });
 
 const Activity = model("Activity", activitySchema);
