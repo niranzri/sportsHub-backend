@@ -8,7 +8,7 @@ const userSchema = new Schema({
     unique: true,
     trim: true,
   },
-  hashedPassword: { type: String, required: true },
+  passwordHash: { type: String, required: true },
   role: { type: String, enum: ["person", "company"], default: "person" },
   company: { type: String, ref: "Company" },
   favourites: [{ type: Types.ObjectId, ref: "Activity" }],

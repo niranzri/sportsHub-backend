@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User.model");
 const { isAuthenticated } = require("../middlewares/route-guard.middleware");
 
+const saltRounds = 10;
 // SIGNUP ROUTE
 router.post("/signup", async (req, res) => {
   const { name, email, password } = req.body;
@@ -40,7 +41,6 @@ router.post("/signup", async (req, res) => {
     }
 
     const salt = bcrypt.genSaltSync(saltRounds);
-    const saltRounds = 10;
     const passwordHash = bcrypt.hashSync(password, salt);
     const userToRegister = { name: name, email: email, passwordHash };
 
@@ -89,12 +89,14 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// VERIFY ROUTE
+/*
+ VERIFY ROUTE
 router.get("/verify", isAuthenticated, async (req, res) => {
   // Check by which name the decoded token payload is added to req object in middleware
   console.log(req.tokenPayload);
   const currentUser = await User.findById(req.tokenPayload.userId);
   res.status(200).json(currentUser);
 });
+*/
 
 module.exports = router;
