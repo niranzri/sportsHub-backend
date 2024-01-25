@@ -1,6 +1,7 @@
 const Activity = require("../models/Activity.model");
 const router = require("express").Router();
 const { isAuthenticated } = require("../middlewares/route-guard.middleware");
+const Company = require("../models/Company.model");
 
 // Starting with /api/activities
 router.get("/", async (req, res) => {
