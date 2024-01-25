@@ -31,6 +31,7 @@ router.post("/", async (req, res) => {
   try {
     const newCompany = await Company.create(payload);
     res.status(201).json(newCompany);
+    console.log(newCompany)
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Error while creating the company." });

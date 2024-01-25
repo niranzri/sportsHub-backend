@@ -1,7 +1,7 @@
 const { Schema, Types, model } = require("mongoose");
 
 const companySchema = new Schema({
-  name: { type: String, required: true, lowercase: true },
+  name: { type: String, required: true },
   city: { type: String, enum: ["Berlin", "Utrecht", "Nantes"] },
   address: { type: String },
   postcode: { type: String }, 
