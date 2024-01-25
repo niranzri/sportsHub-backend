@@ -3,7 +3,7 @@ const User = require("../models/User.model");
 
 const isAuthenticated = (request, response, next) => {
   try {
-    if (req.headers.authorization?.split(" ")[0] === "Bearer") {
+    if (request.headers.authorization?.split(" ")[0] === "Bearer") {
       const token = request.headers.authorization.split(" ")[1];
       const payload = jwt.verify(token, process.env.TOKEN_SECRET);
       request.tokenPayload = payload;
