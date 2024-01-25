@@ -89,14 +89,12 @@ router.post("/login", async (req, res) => {
   }
 });
 
-/*
- VERIFY ROUTE
+//VERIFY ROUTE
 router.get("/verify", isAuthenticated, async (req, res) => {
   // Check by which name the decoded token payload is added to req object in middleware
   console.log(req.tokenPayload);
   const currentUser = await User.findById(req.tokenPayload.userId);
   res.status(200).json(currentUser);
 });
-*/
 
 module.exports = router;

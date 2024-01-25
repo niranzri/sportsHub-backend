@@ -3,10 +3,14 @@ const User = require("../models/User.model");
 
 const isAuthenticated = (request, response, next) => {
   try {
-    const token = request.headers.authorization.split("")[1];
-    const payload = jwt.verify(token, process.env.TOKEN_SECRET);
-    request.tokenPayload = payload;
-    next();
+    if (req.headers.authorization?.split(" ")[0] === "Bearer") {
+      const token = request.headers.authorization.split(" ")[1];
+      const payload = jwt.verify(token, process.env.TOKEN_SECRET);
+      request.tokenPayload = payload;
+      next();
+    } else {
+      throw new Error("No token");
+    }
   } catch (err) {
     response.status(401).json("token not provided or not valid");
   }
