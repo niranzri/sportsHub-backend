@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Crossfit human project",
+        "city": "Nantes",
+        "address":"10 rue Jean Mermoz",
+        "postcode": "44980",
+        "image":"https://www.crossfit-human-project.fr/wp-content/uploads/2021/06/Logo-Summer-Human-Project-sans-fond-768x944.png",
+        "employee:": []
+    },
+    {
+        "name": "Sterk",
+        "city": "Utrecht",
+        "address":" Konigin Wilheminalaan 4b",
+        "postcode": "3527 LD",
+        "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2FBoulderhalSterk%2F&psig=AOvVaw3g63WUwXCVlurhylaO9ilg&ust=1706278805079000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJDUsoXe-IMDFQAAAAAdAAAAABAD",
+        "employee:": []
+    },
+    {
+        "name": "OMF - Salle de musculation d'Orvault",
+        "city": "Nantes",
+        "address":"10 rue Stévin - Centre Stévin",
+        "postcode": "3527 LD",
+        "image":"https://lh3.googleusercontent.com/p/AF1QipOxdqvhY-ABBNamME41mchX2w7v1oeZU1i2bmYX=s294-w294-h220-n-k-no",
+        "employee:": []
+    },
+    {
+        "name": "Vertical'Art",
+        "city": "Nantes",
+        "address":"1 rue d'Athènes",
+        "postcode": "44300",
+        "image":"https://nantes.vertical-art.fr/wp-content/themes/common/img/logo_va/logo-verticalart-bt-Nantes.png",
+        "employee:": []
+    }
+]
