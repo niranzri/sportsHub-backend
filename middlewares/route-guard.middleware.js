@@ -14,7 +14,7 @@ const isAuthenticated = (request, response, next) => {
 
 const isCompany = async (request, response, next) => {
   const currentUser = await User.findById(request.tokenPayload.userId);
-  if (currentUser.roles?.includes("COMPANY")) {
+  if (currentUser.role?.includes("company")) {
     next();
   } else {
     response.status(403).json("You need to be a company user for that");
@@ -23,7 +23,7 @@ const isCompany = async (request, response, next) => {
 
 const isPerson = async (request, response, next) => {
   const currentUser = await User.findById(request.tokenPayload.userId);
-  if (currentUser.roles?.includes("PERSON")) {
+  if (currentUser.role?.includes("person")) {
     next();
   } else {
     response.status(403).json("You need to be a person user for that");
