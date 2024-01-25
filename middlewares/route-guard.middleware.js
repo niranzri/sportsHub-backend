@@ -29,3 +29,5 @@ const isPerson = async (request, response, next) => {
     response.status(403).json("You need to be a person user for that");
   }
 };
+
+module.exports = { isAuthenticated };
