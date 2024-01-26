@@ -1,17 +1,26 @@
 [
     {
         "type": "crossfit",
-        "schedule": ["Monday", "Wednesday"]
+        "schedule": ["Monday", "Wednesday"],
+        "image" :"https://www.crossfit.com/wp-content/uploads/2023/11/13131232/crossfit-coach-led-fitness-training-adapted-for-you-handstand-hold.jpg"
         
     },
     {
         "type": "bouldering",
-        "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "image": "https://assets-global.website-files.com/63a07ada5189954d6a5cf58e/63ca71f5b8039241dddb7699_Westfield_0002_P1411148.jpg"
         
     },
     {
         "type": "powerlifting",
-        "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "image" : "https://www.docteur-fitness.com/wp-content/uploads/2023/06/squat-powerlifting-powerlifter-femme.jpg"
+       
+    },
+    {
+        "type": "yoga",
+        "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "image" : "https://lesailesducanal.com/wp-content/uploads/2021/08/P1045132.jpg"
        
     }
 ]

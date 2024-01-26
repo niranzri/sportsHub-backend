@@ -6,7 +6,7 @@ const Company = require("../models/Company.model");
 // Starting with /api/activities - FE: CompanyProfilePage
 router.get("/", async (req, res) => {
   try {
-    const activities = await Activity.find().populate("company");
+    const activities = await Activity.find();
     res.status(200).json(activities);
   } catch (error) {
     console.log(error);
