@@ -7,8 +7,8 @@ const { isAuthenticated } = require("../middlewares/route-guard.middleware");
 const saltRounds = 10;
 // SIGNUP ROUTE
 router.post("/signup", async (req, res) => {
-  const { name, email, password } = req.body;
-
+  const { name, email, password, company } = req.body;
+ console.log(company)
   // Checks if the email or password or name provided are empty strings
   if (email === "" || password === "" || name === "") {
     res.status(400).json({ message: "Provide email, password and name." });
@@ -42,7 +42,7 @@ router.post("/signup", async (req, res) => {
 
     const salt = bcrypt.genSaltSync(saltRounds);
     const passwordHash = bcrypt.hashSync(password, salt);
-    const userToRegister = { name: name, email: email, passwordHash };
+    const userToRegister = { name, email, passwordHash, company };
 
     const newUser = await User.create(userToRegister);
     res.status(201).json({ message: "User created.", newUser });
