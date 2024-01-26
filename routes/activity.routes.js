@@ -3,7 +3,6 @@ const router = require("express").Router();
 const { isAuthenticated } = require("../middlewares/route-guard.middleware");
 const Company = require("../models/Company.model");
 
-/*
 // Starting with /api/activities - FE: CompanyProfilePage
 router.get("/", async (req, res) => {
   try {
@@ -14,7 +13,6 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: "Error while getting activities" });
   }
 });
-*/
 
 // GET one activity - FE: CompanyActivityDetailsPage
 router.get("/:activityId", async (req, res) => {

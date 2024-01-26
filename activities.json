@@ -1,17 +1,17 @@
 [
     {
         "type": "crossfit",
-        "schedule": ["Monday", "Wednesday"],
-        "company": "Crossfit human project"
+        "schedule": ["Monday", "Wednesday"]
+        
     },
     {
         "type": "bouldering",
-        "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "company": "Sterk"
+        "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        
     },
     {
         "type": "powerlifting",
-        "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "company": "OMF - Salle de musculation d'Orvault"
+        "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+       
     }
 ]
