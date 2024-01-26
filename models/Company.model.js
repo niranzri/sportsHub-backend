@@ -6,7 +6,7 @@ const companySchema = new Schema({
   address: { type: String },
   postcode: { type: String }, 
   image: { type: String },
-  employee: [{ type: Types.ObjectId, ref: "User" }],
+  activities:  [{ type: Types.ObjectId, ref: "Activity" }]
 });
 
 const Company = model("Company", companySchema);

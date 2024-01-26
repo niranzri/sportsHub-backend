@@ -1,6 +1,7 @@
 const { Schema, Types, model } = require("mongoose");
 
 const userSchema = new Schema({
+  name: {type: String},
   email: {
     type: String,
     required: true,
@@ -9,11 +10,12 @@ const userSchema = new Schema({
     trim: true,
   },
   passwordHash: { type: String, required: true },
-  role: { type: String, enum: ["person", "company"], default: "person" },
-  company: { type: String, ref: "Company" },
-  favourites: [{ type: Types.ObjectId, ref: "Activity" }],
+  company: { type: Types.ObjectId, ref: "Company" }
 });
 
 const User = model("User", userSchema);
 
 module.exports = User;
+
+// role: { type: String, enum: ["person", "company"], default: "person" },
+// favourites: [{ type: Types.ObjectId, ref: "Activity" }]} 

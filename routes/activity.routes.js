@@ -3,9 +3,9 @@ const router = require("express").Router();
 const { isAuthenticated } = require("../middlewares/route-guard.middleware");
 const Company = require("../models/Company.model");
 
-// Starting with /api/activities
+/*
+// Starting with /api/activities - FE: CompanyProfilePage
 router.get("/", async (req, res) => {
-  // Get the activities from the DB, using the model
   try {
     const activities = await Activity.find().populate("company");
     res.status(200).json(activities);
@@ -14,8 +14,9 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: "Error while getting activities" });
   }
 });
+*/
 
-// GET one
+// GET one activity - FE: CompanyActivityDetailsPage
 router.get("/:activityId", async (req, res) => {
   const { activityId } = req.params;
   try {
@@ -27,7 +28,7 @@ router.get("/:activityId", async (req, res) => {
   }
 });
 
-// POST one
+// POST one activity - FE: CompanyActivityDetailsPage
 router.post("/", async (req, res) => {
   const payload = req.body;
 
@@ -40,7 +41,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// PUT one
+// PUT one activity - FE: CompanyActivityDetailsPage
 router.put(
   "/:activityId",
   /*isAuthenticated,*/ async (req, res) => {
@@ -65,7 +66,8 @@ router.put(
     }
   }
 );
-// DELETE one
+
+// DELETE one activity - FE: CompanyActivityDetailsPage
 router.delete(
   "/:activityId",
   /*isAuthenticated,*/ async (req, res) => {

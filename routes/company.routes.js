@@ -2,6 +2,7 @@ const Company = require("../models/Company.model");
 const router = require("express").Router();
 const { isAuthenticated } = require("../middlewares/route-guard.middleware");
 
+/*
 // Get the companies from the DB - Reads companies - /api/companies
 router.get("/", async (req, res) => {
   try {
@@ -12,12 +13,14 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: "Error while getting the companies." });
   }
 });
+*/
 
-// GET - Reads one company - /api/companies/:companyId
+
+// GET - Reads one company - /api/companies/:companyId - - FE: CompanyProfilePage
 router.get("/:companyId", async (req, res) => {
   const { companyId } = req.params;
   try {
-    const oneCompany = await Company.findById(companyId);
+    const oneCompany = await Company.findById(companyId).populate("activities");
     res.status(200).json(oneCompany);
   } catch (error) {
     console.log(error);
@@ -25,7 +28,7 @@ router.get("/:companyId", async (req, res) => {
   }
 });
 
-// POST - Creates one company - /api/companies
+// POST - Creates one company - /api/companies - FE: SignUpPage
 router.post("/", async (req, res) => {
   const payload = req.body;
   try {
@@ -38,7 +41,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// PUT - Updates one company - /api/companies/:companyId 
+// PUT - Updates one company - /api/companies/:companyId - FE: CompanyProfilePage
 router.put("/:companyId", async (req, res) => {
     try {
       const { companyId } = req.params;
@@ -54,7 +57,7 @@ router.put("/:companyId", async (req, res) => {
     }
   });
 
-// DELETE /companies/:companyId - Deletes a specific company by id
+// DELETE /companies/:companyId - Deletes a specific company by id - FE: CompanyProfilePage
 router.delete("/:companyId", async (req, res) => {
     try {
       const { companyId } = req.params;
