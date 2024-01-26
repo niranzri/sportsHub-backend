@@ -5,7 +5,7 @@
         "address":"10 rue Jean Mermoz",
         "postcode": "44980",
         "image":"https://www.crossfit-human-project.fr/wp-content/uploads/2021/06/Logo-Summer-Human-Project-sans-fond-768x944.png",
-        "employee:": []
+        "activities": []
     },
     {
         "name": "Sterk",
@@ -13,7 +13,7 @@
         "address":" Konigin Wilheminalaan 4b",
         "postcode": "3527 LD",
         "image":"https://pofzak.nl/wp-content/uploads/2020/06/logo_sterk_website_boventitel.jpg",
-        "employee:": []
+        "activities": []
     },
     {
         "name": "OMF - Salle de musculation d'Orvault",
@@ -21,7 +21,7 @@
         "address":"10 rue Stévin - Centre Stévin",
         "postcode": "3527 LD",
         "image":"https://lh3.googleusercontent.com/p/AF1QipOxdqvhY-ABBNamME41mchX2w7v1oeZU1i2bmYX=s294-w294-h220-n-k-no",
-        "employee:": []
+        "activities": []
     },
     {
         "name": "Vertical'Art",
@@ -29,6 +29,6 @@
         "address":"1 rue d'Athènes",
         "postcode": "44300",
         "image":"https://nantes.vertical-art.fr/wp-content/themes/common/img/logo_va/logo-verticalart-bt-Nantes.png",
-        "employee:": []
+        "activities": []
     }
 ]
