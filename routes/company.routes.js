@@ -2,8 +2,7 @@ const Company = require("../models/Company.model");
 const router = require("express").Router();
 const { isAuthenticated } = require("../middlewares/route-guard.middleware");
 
-/*
-// Get the companies from the DB - Reads companies - /api/companies
+// GET - Reads all companies - /api/companies - FE: SignUp
 router.get("/", async (req, res) => {
   try {
     const companies = await Company.find();
@@ -13,10 +12,8 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: "Error while getting the companies." });
   }
 });
-*/
 
-
-// GET - Reads one company - /api/companies/:companyId - - FE: CompanyProfilePage
+// GET - Reads one company - /api/companies/:companyId - FE: CompanyProfilePage
 router.get("/:companyId", async (req, res) => {
   const { companyId } = req.params;
   try {
@@ -70,7 +67,6 @@ router.delete("/:companyId", async (req, res) => {
       res.status(500).json({ message: "Failed to delete company." });
     }
   });
-
 
 
 module.exports = router;
