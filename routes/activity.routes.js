@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 router.get("/:activityId", async (req, res) => {
   const { activityId } = req.params;
   try {
-    const oneActivity = await Activity.findById(activityId);
+    const oneActivity = await Activity.findById(activityId).populate("company");
     res.status(200).json(oneActivity);
   } catch (error) {
     console.log(error);
@@ -29,9 +29,21 @@ router.get("/:activityId", async (req, res) => {
 // POST one activity - FE: CompanyActivityDetailsPage
 router.post("/", async (req, res) => {
   const payload = req.body;
+  //const { payload } = req.body;
+  //console.log(payload);
+  /* const payload = {
+    type: type,
+    schedule: schedule,
+    image: image,
+    company: company._id,
+  };*/
+  // const { company } = req.params;
 
+  console.log(payload);
   try {
     const createdActivity = await Activity.create(payload);
+    //console.log(company);
+    //await createdActivity; //.populate(company);
     res.status(201).json(createdActivity);
   } catch (error) {
     console.log(error);
@@ -39,6 +51,21 @@ router.post("/", async (req, res) => {
   }
 });
 
+// POST one activity - FE: CompanyActivityDetailsPage
+/*router.post("/:company", async (req, res) => {
+  const payload = req.body;
+  const { company } = req.params;
+  console.log(req.params);
+  try {
+    const createdActivity = (await Activity.create(payload)).populate();
+    console.log(company);
+    await createdActivity.populate(company);
+    res.status(201).json(createdActivity);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "error while creating the activity" });
+  }
+});*/
 // PUT one activity - FE: CompanyActivityDetailsPage
 router.put(
   "/:activityId",
