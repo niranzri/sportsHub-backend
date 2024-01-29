@@ -77,8 +77,14 @@ router.post("/login", async (req, res) => {
             expiresIn: "5h",
           }
         );
+        // ADDED
+        const user = {
+          userId: potentialUser._id,
+          name: potentialUser.name,
+          company: potentialUser.company,
+        }
         // Sends token to the client
-        res.status(200).json({ authToken: authToken });
+        res.status(200).json({ authToken: authToken, user: user });
       } else {
         res.status(403).json({ message: "Incorrect password." });
       }
