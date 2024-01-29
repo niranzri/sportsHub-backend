@@ -8,6 +8,7 @@ const saltRounds = 10;
 // SIGNUP ROUTE
 router.post("/signup", async (req, res) => {
   const { name, email, password, company} = req.body;
+  console.log(req.body)
   const payload = { name, email, password, company:company.value._id}
 
   // Checks if the email or password or name provided are empty strings
