@@ -79,7 +79,7 @@ router.post("/login", async (req, res) => {
         );
         // ADDED
         const user = {
-          userId: potentialUser._id,
+          _id: potentialUser._id,
           name: potentialUser.name,
           company: potentialUser.company,
         }
