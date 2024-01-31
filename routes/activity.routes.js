@@ -27,11 +27,11 @@ router.get("/:activityId", async (req, res) => {
   }
 });
 
-router.get("/company/:companyId", async (req, res, next) => {
-  const { companyId } = req.params;
+router.get("/company/:company", async (req, res, next) => {
+  const { company } = req.params;
 
-  console.log(companyId);
-  Activity.find({ company: companyId })
+  console.log(company);
+  Activity.find({ company })
     .populate("company")
     .then((activities) => {
       res.status(200).json(activities);
