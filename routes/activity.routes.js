@@ -6,7 +6,7 @@ const Company = require("../models/Company.model");
 // Starting with /api/activities - FE: CompanyProfilePage
 router.get("/", async (req, res) => {
   try {
-    const activities = await Activity.find();
+    const activities = await Activity.find().populate("company");
 
     res.status(200).json(activities);
   } catch (error) {
@@ -27,7 +27,7 @@ router.get("/:activityId", async (req, res) => {
   }
 });
 
-router.get("/company/:company", async (req, res, next) => {
+router.get("/company/:companyId", async (req, res, next) => {
   const { company } = req.params;
 
   console.log(company);
