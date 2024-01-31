@@ -27,7 +27,7 @@ router.get("/:activityId", async (req, res) => {
   }
 });
 
-router.get("/company/:companyId", async (req, res, next) => {
+router.get("/company/:company", async (req, res, next) => {
   const { company } = req.params;
 
   console.log(company);
