@@ -3,18 +3,6 @@ const { isAuthenticated } = require("../middlewares/route-guard.middleware");
 const User = require("../models/User.model");
 const Company = require("../models/Company.model");
 
-/*
-//GET all
-router.get("/", async (req, res) => {
-  try {
-    const users = await User.find().populate("favourites");
-    res.status(200).json(users);
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: "Error while getting users" });
-  }
-});
-*/
 
 // GET one user - FE: CompanyProfilePage
 router.get("/:userId", async (req, res) => {
@@ -52,31 +40,6 @@ router.put(
     }
   }
 );
-
-/*
-// DELETE one
-router.delete(
-  "/:userId",
-  isAuthenticated, async (req, res) => {
-     const { userId } = req.tokenPayload;
-    const { currentUserId } = req.params;
-    try {
-      const userToDelete = await User.findById(currentUserId);
-
-       if (userToDelete.company == userId) {
-      console.log("Deleting");
-      await User.findByIdAndDelete(currentUserId);
-      res.status(204).json();
-      } else {
-        res.status(403).json({ message: "you are not the right user" });
-      }
-    } catch (error) {
-      res.status(500).json({ message: "error while deleting the book" });
-    }
-  }
-);
-*/
-
 
 
 module.exports = router;

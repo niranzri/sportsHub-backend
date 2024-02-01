@@ -1,6 +1,5 @@
 const Company = require("../models/Company.model");
 const router = require("express").Router();
-const { isAuthenticated } = require("../middlewares/route-guard.middleware");
 
 // GET - Reads all companies - /api/companies - FE: SignUp
 router.get("/", async (req, res) => {

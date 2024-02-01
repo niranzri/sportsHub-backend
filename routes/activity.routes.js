@@ -59,23 +59,17 @@ router.post("/", async (req, res) => {
 
 // PUT one activity - FE: CompanyActivityDetailsPage
 router.put(
-  "/:activityId",
-  /*isAuthenticated,*/ async (req, res) => {
-    // const { userId } = req.tokenPayload;
+  "/:activityId", async (req, res) => {
     const payload = req.body;
     const { activityId } = req.params;
     try {
       const activityToUpdate = await Activity.findById(activityId);
-      //   if (activityToUpdate.company == userId) {
       const updatedActivity = await Activity.findByIdAndUpdate(
         activityId,
         payload,
         { new: true }
       );
       res.status(200).json(updatedActivity);
-      /* } else {
-      res.status(403).json({ message: "you are not the right user" });
-    }*/
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: "error while updating the activity" });
@@ -85,20 +79,13 @@ router.put(
 
 // DELETE one activity - FE: CompanyActivityDetailsPage
 router.delete(
-  "/:activityId",
-  /*isAuthenticated,*/ async (req, res) => {
-    //  const { userId } = req.tokenPayload;
+  "/:activityId", async (req, res) => {
     const { activityId } = req.params;
     try {
       const activityToDelete = await Activity.findById(activityId);
-
-      //  if (activityToDelete.company == userId) {
       console.log("Deleting");
       await Activity.findByIdAndDelete(activityId);
       res.status(204).json();
-      /* } else {
-      res.status(403).json({ message: "you are not the right user" });
-    }*/
     } catch (error) {
       res.status(500).json({ message: "error while deleting the book" });
     }
